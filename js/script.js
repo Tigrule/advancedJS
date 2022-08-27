@@ -47,5 +47,29 @@ class ProductsList {
     return this.goods.reduce((summ, item) => summ + item.price, 0)
   }
 }
+
+class ProductsCart {
+  constructor() {
+    products = []
+  }
+  add(product, number = 1) {
+    this.products.push(product)
+  }
+  render(){}
+  GetTotalPrice (){}
+  Buy(){} // Это скорее для отдельной страницы корзины
+  delete(id){}
+  clear(){}
+}
+
+class CartProduct extends ProductsItem {
+  super(product, numberOfItems = 1) {
+    this.numberOfItems = numberOfItems
+    ProductsCart(product)
+  }
+  deleteFromProductsCart(){}
+  addOneMore(){}
+  subtractOneMore(){}
+}
   let list = new ProductsList();
   console.log(list.summAllGoods());
