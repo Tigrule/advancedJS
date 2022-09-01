@@ -1,3 +1,5 @@
+@import url(toggle.css);
+
 * {
   margin: 0;
   padding: 0;
@@ -10,9 +12,21 @@ header {
   text-align: center;
 }
 
-.cart-button {
+.cart {
+  display: inline-block;
+  position: relative;
+}
+
+.cart__button {
   padding: 5px;
   background-color: #d0fafd;
+}
+
+.cart__body {
+  min-width: 250px;
+  min-height: 200px;
+  position: absolute;
+  background-color: grey;
 }
 
 .container {
