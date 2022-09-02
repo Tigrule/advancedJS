@@ -3,16 +3,13 @@ let cart = ''
 const cartBody = document.querySelector('.cart__body');
   document.addEventListener(
     'click', (event) => {
-      if (event.target.classList.contains('cart__button')) {
-       cartBody.classList.toggle('display-none');
+      if (event.target.classList.contains('cart__button')&& !Boolean(cart)) {
+       cartBody.classList.remove('display-none');
+       cartContent.textContent = '';
        cart = new ProductsCart();
     } else {
-        cartBody.classList.add('display-none');
-        if (cart){
-          // cartContent.textContent = '';
-          cartContent.clear();
-          cart = ''
-        }
-      }
+      cartBody.classList.add('display-none');
+      cart = ''
     }
-  )
+  }
+)

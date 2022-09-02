@@ -1,18 +1,14 @@
-"use strict"
-
-function addToCart() {
-  console.log(event.target);
-}
+"use strict";
 
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 
 class ProductsItem {
-    constructor(product, img = 'img/good_img.png') {
-      this.title = product.product_name;
-      this.id = product.id_product;
-      this.price = product.price;
-      this.image = img;
+  constructor(product, img = 'img/good_img.png') {
+    this.title = product.product_name;
+    this.id = product.id_product;
+    this.price = product.price;
+    this.image = img;
   }
 
   render() {
@@ -48,8 +44,8 @@ class ProductsList {
   render() {
     const block = document.querySelector(this.container);
     this.goods.forEach(good => {
-    const goodsItem = new ProductsItem(good);
-    block.insertAdjacentHTML('beforeend', goodsItem.render())
+      const goodsItem = new ProductsItem(good);
+      block.insertAdjacentHTML('beforeend', goodsItem.render())
     });
   }
   summAllGoods() {
@@ -82,9 +78,7 @@ class ProductsCart extends ProductsList {
       })
       .catch(error => console.log(error));
   }
-  add(product, number = 1) {
-    this.products.push(product)
-  }
+  add() {}
   GetTotalPrice (){}
   Buy(){}
   delete(id){}
@@ -116,18 +110,5 @@ class CartProduct extends ProductsItem {
   subtractOneMore(){}
 }
 
-  let list = new ProductsList();
-  console.log(list.summAllGoods());
-
-  
-
-    // _fetchProducts() {
-  //   this.goods = [
-  //     { title: 'Shirt', price: 150, image: 'img/good_img.png' },
-  //     { title: 'Socks', price: 50, image: 'img/good_img.png' },
-  //     { title: 'Jacket', price: 350, image: 'img/good_img.png' },
-  //     { title: 'Shoes', price: 250, image: 'img/good_img.png' },
-  //     { title: 'Правый товар', price: 0, 
-  //       image:'img/depositphotos_10182313-stock-photo-hand-symbol.webp' },
-  //     ];
-  // }
+let list = new ProductsList();
+console.log(list.summAllGoods());
